@@ -14,6 +14,7 @@ export default async function HomePage() {
   const { user } = await payload.auth({ headers })
 
   const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+  payload.logger.info('Test log from the frontend!')
 
   return (
     <div className="home">
