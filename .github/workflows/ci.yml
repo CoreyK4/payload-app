@@ -44,9 +44,7 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install
-        # If/when you commit pnpm-lock.yaml, switch to:
-        # run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
         run: pnpm run lint
