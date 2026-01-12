@@ -39,6 +39,8 @@ jobs:
 
       - name: Unit/Integration tests (Vitest)
         run: pnpm run test:int
+        env:
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps
