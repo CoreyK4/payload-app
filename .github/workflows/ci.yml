@@ -59,12 +59,12 @@ jobs:
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps
-        env:
-          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/payload_test
 
       - name: E2E tests (Playwright)
         run: pnpm run test:e2e
+        env:
+          PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/payload_test
 
       - name: Upload Playwright report (on failure)
         if: failure()
